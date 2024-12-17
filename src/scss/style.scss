@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
+$primary: var(--bs-primary);
+$secondary: var(--bs-secondary);
+$dark: var(--bs-dark);
+
+// ---------------
+* {
+  box-sizing: border-box;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  max-width: 860px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  color: var(--bs-dark);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  width: fit-content;
+}
+
+.btn,
+.formInputAddress,
+.formInputName,
+.formInputSmall,
+.formInputFile {
+  border: none;
+  outline: none;
+}
+
+//  Spinner -------------------
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #00cc66 transparent #00cc66 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// ----------------------
+.btn,
+.card,
+.profileCard,
+.socialIconDiv,
+.profile-createListing {
+  transition: scale 0.15s ease-in-out;
+
+  &:hover {
+    scale: 1.01;
+  }
+}
+
+// Utility Classes
+.pageContainer {
+  padding-top: 1.5rem;
+  padding-bottom: 11rem;
+}
+
+.fade-out {
+  opacity: 0;
+}
+.fade-in {
+  opacity: 1;
+}
+
+.listingItem {
+  transition: opacity 1.5s ease-in-out;
+}
+// --------------
+
+.input,
+.passwordInput,
+.emailInput,
+.nameInput,
+.textarea {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  background: #ffffff;
+  border-radius: 3rem;
+  height: 3rem;
+  width: 100%;
+  outline: none;
+  padding: 0 2rem 0 2.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+
+  ::placeholder {
+    color: #6c757d;
+  }
+}
+
+.customShadow {
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+// --------------
+.navbarListItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbarListItemName,
+.navbarListItemNameActive {
+  margin-top: 0.25rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #8f8f8f;
+}
+.navbarListItemNameActive {
+  color: #2c2c2c;
+}
+
+// -----------------
+.nameInput {
+  background: url('../assets/svg/badgeIcon.svg') #ffffff 3.5% center no-repeat;
+}
+
+.emailInput {
+  background: url('../assets/svg/personIcon.svg') #ffffff 3.5% center no-repeat;
+}
+
+.passwordInputDiv {
+  position: relative;
+}
+
+.passwordInput {
+  background: url('../assets/svg/lockIcon.svg') #ffffff 3.5% center no-repeat;
+}
+
+.showPassword {
+  cursor: pointer;
+  position: absolute;
+  top: -4%;
+  right: 1%;
+  padding: 1rem;
+}
+
+.signInBar,
+.signUpBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: inherit;
+}
+
+.socialIconDiv {
+  padding: 0.75rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
+.socialIconImg {
+  width: 100%;
+}
+
+// ---------------
+.swiper-pagination-bullet-active {
+  background-color: #ffffff !important;
+}
+
+.swiper-text {
+  max-width: 80%;
+}
+.swiperSlideName {
+  height: fit-content;
+
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-weight: 600;
+}
+
+.swiperSlidePrice {
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  color: $secondary;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.swiperSlideImg,
+.listingImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 668px) {
+  .slider-control img {
+    min-height: 400px;
+  }
+}
+@media (min-width: 768px) {
+  .slider-control img {
+    min-height: 480px;
+  }
+}
+
+// ------------------
+.exploreCategoryWrapper {
+  min-height: 135px;
+  max-height: 175px !important;
+}
+
+.exploreCategoryLink {
+  max-width: 48%;
+  max-height: 100% !important;
+
+  img {
+    border-radius: 0.75rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 490px) {
+  .exploreCategoryWrapper {
+    max-height: 135px !important;
+  }
+}
+@media (min-width: 590px) {
+  .exploreCategoryWrapper {
+    min-height: 210px;
+    max-height: 225px !important;
+  }
+}
+
+// --------------------
+.loadMore {
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 0.25rem 1rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+// Listing Page -------------------
+.shareIconDiv {
+  cursor: pointer;
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  z-index: 2;
+  padding: 0.9rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roundedPill {
+  padding: 0.25rem 0.5rem;
+  color: #ffffff;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.list-group-item {
+  border-bottom: 0;
+  padding-left: 0;
+}
+
+.leafletContainer {
+  width: 100%;
+  height: 250px;
+  overflow-x: hidden;
+  margin-bottom: 3rem;
+}
+
+.linkCopied {
+  position: fixed;
+  top: 9%;
+  right: 5%;
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+// Profile Page --------------------
+.profile-top {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.logOut {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff !important;
+  background-color: #00cc66;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profileCard {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profileName,
+.profileEmail,
+.profileAddress,
+.profileAddressActive,
+.profileEmailActive,
+.profileNameActive {
+  all: unset;
+  margin: 0.3rem 0;
+  font-weight: 600;
+  width: 100%;
+}
+
+.profileNameActive,
+.profileEmailActive,
+.profileAddressActive {
+  background-color: rgba(44, 44, 44, 0.1);
+}
+
+.profileEmail,
+.profileAddress,
+.profileAddressActive,
+.profileEmailActive {
+  font-weight: 500;
+}
+
+// ----------------
+label {
+  display: block !important;
+  margin-top: 0.75rem;
+}
+
+.sign-in,
+.sign-up,
+.forgot-password,
+.contact {
+  max-width: 540px;
+}
+
+// Create Listing Page ----------------
+.createListing,
+.profile-createListing {
+  max-width: 540px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-listing-page .createListing {
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.formLabel {
+  font-weight: 600;
+  margin-top: 1.5rem;
+  text-align: center;
+  opacity: 0.85;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.formButtons,
+.formInput,
+.formInputAddress,
+.formInputName,
+.formInputSmall,
+.formRooms,
+.geolocation {
+  display: flex !important;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.formButton,
+.formInputAddress,
+.formInputName,
+.formInputSmall,
+.formInputFile,
+.formButtonActive {
+  padding: 0.9rem 3rem;
+  background-color: #f0efef;
+  font-weight: 500;
+  border-radius: 1.5rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formButton {
+  &,
+  &:hover,
+  &:focus {
+    background-color: #e9e7e7;
+    color: $dark;
+  }
+}
+.formButtonActive {
+  &,
+  &:hover,
+  &:focus {
+    background-color: $secondary;
+    color: #ffffff;
+  }
+}
+
+.formInputAddress,
+.formInputName,
+.formInputSmall,
+.formInputFile {
+  border: none;
+  outline: none;
+}
+
+.formInputSmall,
+.formInputFile {
+  padding: 0.9rem 0.7rem;
+  text-align: center;
+}
+
+.formPriceDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+
+  .formLabel {
+    width: fit-content;
+  }
+}
+
+.formPriceText {
+  font-weight: 600;
+  text-wrap: nowrap;
+}
+
+// input[type='file']::file-selector-button,
+input[type='file']::-webkit-file-upload-button {
+  background-color: $secondary;
+  color: #fff;
+  margin: 0.2rem 1rem 0.2rem 0.2rem;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+input[type='file']:hover::-webkit-file-upload-button {
+  background-color: darken(#198754, 7%) !important;
+  scale: 1.015;
+}
+
+// -------------------
+.offerBadge {
+  padding: 0.25rem 0.5rem;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 1rem;
+  margin-left: 1rem;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+@media (min-width: 670px) {
+  .createListing {
+    min-width: 100%;
+  }
+}
+
+@media (min-width: 880px) {
+  .createListing {
+    min-width: 90%;
+  }
+}
+
+@media (max-height: 600px) {
+  .navbar {
+    position: static !important;
+  }
+
+  .pageContainer {
+    max-width: 90%;
+    padding-bottom: 6rem;
+  }
+
+  .sign-in,
+  .sign-up,
+  .forgot-password,
+  .contact {
+    &.pageContainer {
+      max-width: 500px;
+    }
+  }
+  .slider-control img {
+    min-height: 100dvh;
+    max-height: 100dvh;
+  }
+
+  .exploreCategoryWrapper {
+    min-height: 150px;
+    max-height: 170px !important;
+  }
+}
